@@ -1,4 +1,6 @@
-//Generate Random numbers && find out the max & min
+/*
+ * Generate Random numbers && find out the max & min
+ */
 import java.util.Random;
 public class RandomAndCompare {
 	public static void main(String[] args)
@@ -9,11 +11,13 @@ public class RandomAndCompare {
 		for(i=0;i<10;i++){
 			a[i]=n.nextInt(100);
 			System.out.print(a[i]+" ");
-			if(a[i]>TheMax)
-				TheMax=a[i];
-			if(i==0){
+						
+			//initialize when i=0
+			if(i==0)
 				TheMin=TheMax=a[i];
-			}
+			
+			if(a[i]>TheMax)
+				TheMax=a[i];			
 			if(a[i]<TheMin)
 				TheMin=a[i];
 		}
