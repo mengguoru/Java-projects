@@ -10,8 +10,10 @@ import javax.swing.JFrame;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-//a Simple Calculator can + - *　/
-//use GUI
+/* description : Simple GUI Calculator
+ * function    :  '+' '-' '*' '/'
+ */
+
 public class SimpleCalculator extends JFrame implements ActionListener{
 	JTextField num1Text,num2Text;
 	JButton calBtn;
@@ -51,7 +53,7 @@ public class SimpleCalculator extends JFrame implements ActionListener{
 		new SimpleCalculator();
 	}
 	
-	//实现ActionListener方法
+	// ActionListener
 	public void actionPerformed(ActionEvent e){
 		if(e.getSource()==calBtn){
 			//
@@ -83,7 +85,7 @@ public class SimpleCalculator extends JFrame implements ActionListener{
 			}
 			resultText.setText("result:"+result);
 		}catch(Exception e){
-			Exception e1=new Exception("输入有误");
+			Exception e1=new Exception("input error");
 			throw(e1);
 		}
 	}
