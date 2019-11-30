@@ -1,7 +1,5 @@
-package 简单的用户管理系统;
+package 简单的学生注册系统;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.InputStream;
 import java.sql.*;
 import java.util.Properties;
@@ -29,16 +27,18 @@ public class UserDA {
 //			System.out.println(System.getProperty("user.dir"));
 			pros = new Properties();
 
-			String tmp = System.getProperty("user.dir") + "\\db.properties";
-			File f = new File(tmp);
-			try(InputStream f2 = new FileInputStream(f))
-			{
-				pros.load(f2);
-			}catch (Exception e)
-			{
-				e.printStackTrace();
-			}
+//			String tmp = System.getProperty("user.dir") + "\\db.properties";
+//			File f = new File(tmp);
+//			try(InputStream f2 = new FileInputStream(f))
+//			{
+//				pros.load(f2);
+//			}catch (Exception e)
+//			{
+//				e.printStackTrace();
+//			}
 			//pros.load(Thread.currentThread().getContextClassLoader().getResourceAsStream(tmp));
+			InputStream is = this.getClass().getClassLoader().getResourceAsStream("db.properties");
+			pros.load(is);
 
 			//加载驱动
 			Class.forName(pros.getProperty("mysqlDriver"));

@@ -1,4 +1,4 @@
-package 简单的用户管理系统;
+package 简单的学生注册系统;
 
 public class Student {
 	public Student(int studentId, String name, String majorAndClass, String phoneNum) {

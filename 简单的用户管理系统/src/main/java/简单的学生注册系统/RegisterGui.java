@@ -1,24 +1,21 @@
-package 简单的用户管理系统;
+package 简单的学生注册系统;
 
 import java.awt.Container;
-import java.awt.Dimension;
 import java.awt.GridLayout;
-import java.awt.Label;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-public class Tester extends JFrame implements ActionListener {
+public class RegisterGui extends JFrame implements ActionListener {
 	JTextField studentId,name,majorAndClass,phoneNum;
 	JTextArea studentId0,name0,majorAndClass0,phoneNum0;
 	JButton addUserBtn;
-	public Tester(){
+	public RegisterGui(){
 		super();
 		Container c=this.getContentPane();
 		c.setLayout(new GridLayout(5,2));
@@ -53,7 +50,7 @@ public class Tester extends JFrame implements ActionListener {
 			String temp4=phoneNum.getText();
 			Student temp5=new Student(temp1,temp2,temp3,temp4);
 			UserDA da = new UserDA();
-
+			
 			try {
 				da.add(temp5);
 			} catch (SQLException e1) {
@@ -63,6 +60,6 @@ public class Tester extends JFrame implements ActionListener {
 		}
 	}
 	public static void main(String[] args){
-		new Tester();
+		new RegisterGui();
 	}
 }
