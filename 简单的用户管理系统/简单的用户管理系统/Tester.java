@@ -52,21 +52,10 @@ public class Tester extends JFrame implements ActionListener {
 			String temp3=majorAndClass.getText();
 			String temp4=phoneNum.getText();
 			Student temp5=new Student(temp1,temp2,temp3,temp4);
+			UserDA da = new UserDA();
+
 			try {
-				UserDA.init();
-			} catch (SQLException e2) {
-				// TODO Auto-generated catch block
-				e2.printStackTrace();
-			}
-			
-			try {
-				UserDA.add(temp5);
-			} catch (SQLException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
-			try {
-				UserDA.terminate();
+				da.add(temp5);
 			} catch (SQLException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
